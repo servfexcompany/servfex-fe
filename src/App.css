@@ -7,14 +7,15 @@
   align-items: center;
   justify-content: space-between;
   position: relative;
-  overflow: hidden;
-  padding: clamp(24px, 4vh, 48px) 20px;
+  overflow-x: hidden;
+  padding: clamp(20px, 4vh, 48px) 16px;
   box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
 }
 
 /* Invisible top spacer so the brand text remains in the optical vertical center */
 .top-spacer {
-  height: clamp(32px, 6vh, 64px);
+  height: clamp(24px, 5vh, 60px);
   width: 100%;
 }
 
@@ -26,15 +27,20 @@
   justify-content: center;
   text-align: center;
   user-select: none;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 10px;
+  box-sizing: border-box;
 }
 
+/* Exact Canva settings: Montserrat, 94.6px, Bold, Letter-spacing: 0, Line-spacing: 1.01 */
 .brand-title {
   font-family: 'Montserrat', sans-serif;
-  font-size: clamp(4.5rem, 13vw, 9.5rem);
-  font-weight: 800;
-  letter-spacing: -0.02em;
+  font-size: clamp(3.2rem, 9vw, 94.6px);
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.01;
   color: #ffffff;
-  line-height: 1.02;
   margin: 0;
   text-align: center;
   text-rendering: optimizeLegibility;
@@ -44,14 +50,14 @@
 
 .brand-tagline {
   font-family: 'Montserrat', sans-serif;
-  font-size: clamp(1.15rem, 3vw, 2.2rem);
-  font-weight: 600;
-  letter-spacing: clamp(0.24em, 0.5vw, 0.38em);
+  font-size: clamp(0.95rem, 2.3vw, 24px);
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.01;
   text-transform: uppercase;
   color: #ffffff;
-  margin: clamp(20px, 3vh, 32px) 0 0 0;
+  margin: clamp(10px, 1.8vh, 18px) 0 0 0;
   text-align: center;
-  padding-left: clamp(0.24em, 0.5vw, 0.38em); /* Balances out the right letter-spacing */
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -63,18 +69,22 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding-bottom: clamp(12px, 3vh, 36px);
+  padding-bottom: clamp(12px, 3vh, 32px);
 }
 
 .coming-soon-badge {
   display: inline-flex;
   align-items: center;
-  gap: 16px;
-  padding: 14px 38px;
+  justify-content: center;
+  gap: clamp(8px, 1.5vw, 12px);
+  padding: clamp(10px, 1.8vw, 14px) clamp(18px, 3.5vw, 32px);
   border-radius: 9999px;
   background: #0d0d0d;
   border: 1.5px solid rgba(255, 255, 255, 0.22);
   transition: all 0.3s ease;
+  white-space: nowrap;
+  max-width: 95vw;
+  box-sizing: border-box;
 }
 
 .coming-soon-badge:hover {
@@ -83,55 +93,85 @@
 }
 
 .pulse-dot {
-  width: 11px;
-  height: 11px;
+  width: clamp(7px, 1.5vw, 10px);
+  height: clamp(7px, 1.5vw, 10px);
+  min-width: 7px;
+  min-height: 7px;
   border-radius: 50%;
   background-color: #ffffff;
-  box-shadow: 0 0 10px #ffffff;
+  box-shadow: 0 0 8px #ffffff;
   animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  flex-shrink: 0;
 }
 
 @keyframes pulse-glow {
   0%, 100% {
     opacity: 1;
     transform: scale(1);
-    box-shadow: 0 0 12px #ffffff;
+    box-shadow: 0 0 10px #ffffff;
   }
   50% {
     opacity: 0.3;
     transform: scale(0.75);
-    box-shadow: 0 0 4px #ffffff;
+    box-shadow: 0 0 3px #ffffff;
   }
 }
 
+/* Coming Soon text: Montserrat, Bold, Letter spacing: 0, Line spacing: 1.01 */
 .badge-text {
   font-family: 'Montserrat', sans-serif;
-  font-size: clamp(1.15rem, 2.5vw, 1.65rem);
-  font-weight: 800;
-  letter-spacing: 5px;
+  font-size: clamp(0.78rem, 3vw, 1.35rem);
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.01;
   color: #ffffff;
   text-transform: uppercase;
+  white-space: nowrap;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 580px) {
+  .coming-soon-page {
+    padding: 18px 12px;
+  }
+
+  .brand-title {
+    font-size: clamp(2.8rem, 15vw, 4.4rem);
+  }
+
+  .brand-tagline {
+    font-size: clamp(0.75rem, 3.5vw, 1rem);
+    margin-top: 10px;
+  }
+
+  .bottom-badge-container {
+    padding-bottom: 14px;
+  }
+
+  .coming-soon-badge {
+    padding: 9px 18px;
+    gap: 8px;
+  }
+
+  .badge-text {
+    font-size: clamp(0.72rem, 3.2vw, 0.88rem);
+    white-space: nowrap;
+  }
 }
 
 @media (max-height: 700px) {
-  .brand-title {
-    font-size: clamp(3.5rem, 10vw, 6.5rem);
-  }
-  .brand-tagline {
-    font-size: clamp(1rem, 2.5vw, 1.5rem);
-    margin-top: 16px;
-  }
   .top-spacer {
-    height: 16px;
+    height: 12px;
   }
   .bottom-badge-container {
-    padding-bottom: 12px;
+    padding-bottom: 10px;
   }
-  .coming-soon-badge {
-    padding: 10px 24px;
+  .brand-title {
+    font-size: clamp(2.8rem, 9vw, 4.8rem);
   }
-  .badge-text {
-    font-size: 1.05rem;
-    letter-spacing: 3px;
+  .brand-tagline {
+    margin-top: 8px;
   }
 }
