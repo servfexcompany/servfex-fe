@@ -5,47 +5,72 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   position: relative;
   overflow: hidden;
-  padding: 24px;
+  padding: clamp(24px, 4vh, 48px) 20px;
   box-sizing: border-box;
 }
 
-/* Centered image container, perfectly merged into black background */
-.image-wrapper {
-  position: relative;
+/* Invisible top spacer so the brand text remains in the optical vertical center */
+.top-spacer {
+  height: clamp(32px, 6vh, 64px);
+  width: 100%;
+}
+
+/* Brand Hero text group (ServFex / MAKING LIFE EASIER) */
+.brand-hero {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  max-width: 950px;
-  max-height: 68vh;
-  background: transparent;
-}
-
-.brand-image {
-  max-width: 100%;
-  max-height: 68vh;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-  display: block;
+  text-align: center;
   user-select: none;
-  background: transparent;
-  border: none;
-  outline: none;
-  box-shadow: none;
 }
 
-/* Big COMING VERY SOON badge */
+.brand-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(4.5rem, 13vw, 9.5rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  line-height: 1.02;
+  margin: 0;
+  text-align: center;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.brand-tagline {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.15rem, 3vw, 2.2rem);
+  font-weight: 600;
+  letter-spacing: clamp(0.24em, 0.5vw, 0.38em);
+  text-transform: uppercase;
+  color: #ffffff;
+  margin: clamp(20px, 3vh, 32px) 0 0 0;
+  text-align: center;
+  padding-left: clamp(0.24em, 0.5vw, 0.38em); /* Balances out the right letter-spacing */
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Container placing the badge very down near the bottom */
+.bottom-badge-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-bottom: clamp(12px, 3vh, 36px);
+}
+
 .coming-soon-badge {
-  position: relative;
-  margin-top: 32px;
   display: inline-flex;
   align-items: center;
   gap: 16px;
-  padding: 14px 36px;
+  padding: 14px 38px;
   border-radius: 9999px;
   background: #0d0d0d;
   border: 1.5px solid rgba(255, 255, 255, 0.22);
@@ -53,7 +78,7 @@
 }
 
 .coming-soon-badge:hover {
-  border-color: rgba(255, 255, 255, 0.45);
+  border-color: rgba(255, 255, 255, 0.5);
   transform: translateY(-2px);
 }
 
@@ -80,24 +105,33 @@
 }
 
 .badge-text {
-  font-family: var(--font-mono), monospace;
-  font-size: clamp(1.15rem, 2.5vw, 1.7rem);
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.15rem, 2.5vw, 1.65rem);
   font-weight: 800;
   letter-spacing: 5px;
   color: #ffffff;
   text-transform: uppercase;
 }
 
-@media (max-height: 720px) {
-  .brand-image {
-    max-height: 58vh;
+@media (max-height: 700px) {
+  .brand-title {
+    font-size: clamp(3.5rem, 10vw, 6.5rem);
+  }
+  .brand-tagline {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    margin-top: 16px;
+  }
+  .top-spacer {
+    height: 16px;
+  }
+  .bottom-badge-container {
+    padding-bottom: 12px;
   }
   .coming-soon-badge {
-    margin-top: 20px;
     padding: 10px 24px;
   }
   .badge-text {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     letter-spacing: 3px;
   }
 }

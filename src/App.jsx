@@ -1,21 +1,24 @@
 import React from 'react'
-import logoImg from './assets/logo.png'
 import './App.css'
 
 export default function App() {
   return (
     <main className="coming-soon-page">
-      <div className="image-wrapper">
-        <img
-          src={logoImg}
-          alt="ServFex - Making Life Easier"
-          className="brand-image"
-        />
+      {/* Top spacer for optical balance */}
+      <div className="top-spacer" aria-hidden="true"></div>
+
+      {/* Main brand text dead center */}
+      <div className="brand-hero">
+        <h1 className="brand-title">ServFex</h1>
+        <p className="brand-tagline">MAKING LIFE EASIER</p>
       </div>
 
-      <div className="coming-soon-badge">
-        <span className="pulse-dot"></span>
-        <span className="badge-text">COMING VERY SOON</span>
+      {/* Badge positioned very down at the bottom */}
+      <div className="bottom-badge-container">
+        <div className="coming-soon-badge">
+          <span className="pulse-dot"></span>
+          <span className="badge-text">COMING VERY SOON</span>
+        </div>
       </div>
     </main>
   )
