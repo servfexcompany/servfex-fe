@@ -12,67 +12,54 @@
   box-sizing: border-box;
 }
 
-/* Subtle background radial glow to make the black pop */
-.ambient-glow {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: min(80vw, 600px);
-  height: min(80vh, 600px);
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
-  filter: blur(80px);
-  pointer-events: none;
-  z-index: 1;
-}
-
-/* Centered image container, fully zoomed out / scaled to viewport */
+/* Centered image container, perfectly merged into black background */
 .image-wrapper {
   position: relative;
-  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 900px;
-  max-height: 72vh;
+  max-width: 950px;
+  max-height: 68vh;
+  background: transparent;
 }
 
 .brand-image {
   max-width: 100%;
-  max-height: 72vh;
+  max-height: 68vh;
   width: auto;
   height: auto;
   object-fit: contain;
   display: block;
   user-select: none;
-  filter: drop-shadow(0 0 40px rgba(255, 255, 255, 0.04));
-  transition: transform 0.4s ease;
+  background: transparent;
+  border: none;
+  outline: none;
+  box-shadow: none;
 }
 
-.brand-image:hover {
-  transform: scale(1.015);
-}
-
-/* Sleek minimalist badge */
+/* Big COMING VERY SOON badge */
 .coming-soon-badge {
   position: relative;
-  z-index: 2;
-  margin-top: 28px;
+  margin-top: 32px;
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-  padding: 10px 24px;
+  gap: 16px;
+  padding: 14px 36px;
   border-radius: 9999px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  backdrop-filter: blur(8px);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.6);
+  background: #0d0d0d;
+  border: 1.5px solid rgba(255, 255, 255, 0.22);
+  transition: all 0.3s ease;
+}
+
+.coming-soon-badge:hover {
+  border-color: rgba(255, 255, 255, 0.45);
+  transform: translateY(-2px);
 }
 
 .pulse-dot {
-  width: 8px;
-  height: 8px;
+  width: 11px;
+  height: 11px;
   border-radius: 50%;
   background-color: #ffffff;
   box-shadow: 0 0 10px #ffffff;
@@ -83,28 +70,34 @@
   0%, 100% {
     opacity: 1;
     transform: scale(1);
+    box-shadow: 0 0 12px #ffffff;
   }
   50% {
-    opacity: 0.35;
-    transform: scale(0.8);
+    opacity: 0.3;
+    transform: scale(0.75);
+    box-shadow: 0 0 4px #ffffff;
   }
 }
 
 .badge-text {
   font-family: var(--font-mono), monospace;
-  font-size: 0.88rem;
-  font-weight: 700;
-  letter-spacing: 4px;
+  font-size: clamp(1.15rem, 2.5vw, 1.7rem);
+  font-weight: 800;
+  letter-spacing: 5px;
   color: #ffffff;
   text-transform: uppercase;
 }
 
-@media (max-height: 700px) {
+@media (max-height: 720px) {
   .brand-image {
-    max-height: 60vh;
+    max-height: 58vh;
   }
   .coming-soon-badge {
-    margin-top: 16px;
-    padding: 8px 18px;
+    margin-top: 20px;
+    padding: 10px 24px;
+  }
+  .badge-text {
+    font-size: 1.1rem;
+    letter-spacing: 3px;
   }
 }

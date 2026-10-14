@@ -5,8 +5,6 @@ import './App.css'
 export default function App() {
   return (
     <main className="coming-soon-page">
-      <div className="ambient-glow"></div>
-      
       <div className="image-wrapper">
         <img
           src={logoImg}
@@ -17,7 +15,7 @@ export default function App() {
 
       <div className="coming-soon-badge">
         <span className="pulse-dot"></span>
-        <span className="badge-text">COMING SOON</span>
+        <span className="badge-text">COMING VERY SOON</span>
       </div>
     </main>
   )
