@@ -27,7 +27,7 @@ export default function Hero() {
             <a href="#about" className="btn btn-primary">
               Discover ServFex &nbsp; ↘
             </a>
-            <a href="mailto:care@servfex.com?subject=ServFex%20Enquiry" className="btn btn-outline">
+            <a href="mailto:StrategicScale@servfex.com?subject=ServFex%20Enquiry" className="btn btn-outline">
               Contact Our Team
             </a>
           </div>

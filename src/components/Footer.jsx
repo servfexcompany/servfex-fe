@@ -25,8 +25,7 @@ export default function Footer() {
             <a href="#services">Services</a>
             <a href="#how-it-works">How It Works</a>
             <a href="#ambition">Our Ambition</a>
-            <a href="mailto:care@servfex.com">care@servfex.com</a>
-            <a href="mailto:support@servfex.com">support@servfex.com</a>
+            <a href="mailto:StrategicScale@servfex.com">StrategicScale@servfex.com</a>
           </nav>
         </div>
 

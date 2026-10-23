@@ -16,7 +16,7 @@ export default function Contact() {
           <div className="contact-action">
             <a
               className="btn btn-contact-cta"
-              href="mailto:care@servfex.com?subject=ServFex%20Enquiry"
+              href="mailto:StrategicScale@servfex.com?subject=ServFex%20Enquiry"
             >
               Contact ServFex &nbsp; ↗
             </a>
