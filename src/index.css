@@ -1,64 +1,61 @@
-*, *::before, *::after {
+:root {
+  --dark: #101113;
+  --dark-surface: #181a1d;
+  --white: #ffffff;
+  --paper: #fbfbfa;
+  --soft: #f2f3f4;
+  --muted: #646b73;
+  --muted-dark: #aeb4bb;
+  --line: #e5e7e9;
+  --line-dark: #292b2f;
+  --text-dark: #151719;
+  --text-light: #ffffff;
+}
+
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-:root {
-  --font-sans: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-mono: 'Montserrat', ui-monospace, SFMono-Regular, monospace;
-  
-  --bg-primary: #000000;
-  --bg-secondary: #0a0a0a;
-  --bg-card: rgba(18, 18, 18, 0.7);
-  --bg-card-hover: rgba(28, 28, 28, 0.85);
-  
-  --text-main: #ffffff;
-  --text-muted: #999999;
-  --text-dim: #666666;
-  
-  --border-light: rgba(255, 255, 255, 0.12);
-  --border-glow: rgba(255, 255, 255, 0.28);
-  --border-subtle: rgba(255, 255, 255, 0.06);
-}
-
 html {
-  font-family: var(--font-sans);
-  background-color: var(--bg-primary);
-  color: var(--text-main);
   scroll-behavior: smooth;
-  color-scheme: dark;
+  font-size: 16px;
 }
 
 body {
-  min-height: 100vh;
-  background-color: #000000;
-  color: #ffffff;
-  overflow-x: hidden;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--paper);
+  color: var(--text-dark);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-::selection {
-  background: #ffffff;
-  color: #000000;
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-/* Custom modern scrollbar */
+::selection {
+  background: var(--white);
+  color: var(--dark);
+}
+
+/* Custom scrollbar in monochrome */
 ::-webkit-scrollbar {
-  width: 7px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #050505;
+  background: #0d0e10;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #262626;
+  background: #33363d;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #404040;
+  background: #50545f;
 }

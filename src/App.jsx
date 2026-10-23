@@ -1,25 +1,27 @@
 import React from 'react'
+import Navbar from './components/Navbar'
+import Hero from './components/Hero'
+import About from './components/About'
+import Services from './components/Services'
+import HowItWorks from './components/HowItWorks'
+import Ambition from './components/Ambition'
+import Contact from './components/Contact'
+import Footer from './components/Footer'
 import './App.css'
 
 export default function App() {
   return (
-    <main className="coming-soon-page">
-      {/* Top spacer for optical balance */}
-      <div className="top-spacer" aria-hidden="true"></div>
-
-      {/* Main brand text dead center */}
-      <div className="brand-hero">
-        <h1 className="brand-title">ServFex</h1>
-        <p className="brand-tagline">MAKING LIFE EASIER</p>
-      </div>
-
-      {/* Badge positioned very down at the bottom */}
-      <div className="bottom-badge-container">
-        <div className="coming-soon-badge">
-          <span className="pulse-dot"></span>
-          <span className="badge-text">COMING VERY SOON</span>
-        </div>
-      </div>
-    </main>
+    <div className="servfex-app">
+      <Navbar />
+      <main id="main-content">
+        <Hero />
+        <About />
+        <Services />
+        <HowItWorks />
+        <Ambition />
+        <Contact />
+      </main>
+      <Footer />
+    </div>
   )
 }
