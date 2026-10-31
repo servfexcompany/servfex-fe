@@ -1,7 +1,27 @@
-import react from '@vitejs/plugin-react'
-import { defineConfig } from 'vite'
-
-// https://vite.dev/config/
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import path from 'path';
+// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
-})
+    plugins: [react()],
+    resolve: {
+        alias: {
+            '@': path.resolve(__dirname, './src'),
+        },
+    },
+    server: {
+        port: 5173,
+        host: true,
+        cors: true,
+        proxy: {
+            '/api': {
+                target: 'https://api.servfex.com',
+                changeOrigin: true,
+                secure: true,
+                ws: true,
+                timeout: 15 * 60 * 1000,
+                proxyTimeout: 15 * 60 * 1000,
+            },
+        },
+    },
+});
